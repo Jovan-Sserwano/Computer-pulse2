@@ -1,3 +1,6 @@
+
+
+
 # ====================================================
 # COMPUTER PULSE - HARDWARE & NETWORK DIAGNOSTIC AGENT
 # ====================================================
@@ -53,14 +56,3 @@ $logContent | Out-File -FilePath $LogFile -Encoding utf8
 
 Write-Host "[SUCCESS] Hardware & network diagnostic log saved to $LogFile" -ForegroundColor Green
 #
-Set execution policy for the current session and execute your new script:
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
-.\scripts\net_hw_diag.ps1
-#
-Verify that the log file was created and displays formatted hardware/network metrics:
-Get-Content -Path data\network_hardware.log
-#
-Stage your new script and log output, record your commit snapshot, and push your progress to GitHub:
-git add scripts/net_hw_diag.ps1 data/network_hardware.log
-git commit -m "feat: implement hardware and network diagnostic agent for computer-pulse"
-git push
